@@ -28,7 +28,7 @@ __fzf_fasd_zsh_completion() {
     # >1 results, invoke fzf
     selected=$(__fzf_fasd_generate_matches "$slug" \
         | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS $FZF_FASD_OPTS" \
-          fzf --query="$slug" --reverse --bind 'shift-tab:up,tab:down'
+          fzf --reverse --bind 'shift-tab:up,tab:down'
     )
   elif [[ "$matches_count" -eq 1 ]]; then
     # 1 result, just complete it
